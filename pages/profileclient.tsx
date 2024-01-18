@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const StyledAppBar = styled(AppBar)({
   flexGrow: 1,
@@ -39,7 +40,9 @@ const ProfileClient = () => {
             {user ? user.name : ""}
           </StyledTypography>
           <Button color="inherit">
-            <a href="/api/auth/logout">Logout</a>
+            <Link href="/api/auth/logout" passHref>
+            <Button color="inherit">Logout</Button>
+          </Link>
           </Button>
         </Toolbar>
       </StyledAppBar>
